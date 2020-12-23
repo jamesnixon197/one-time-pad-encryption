@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "rootDir": ".",
+        "outDir": "./dist",
+        "removeComments": true,
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
+        "strictNullChecks": true,
+        "experimentalDecorators": true
+    },
+    "include": [
+        "**/*.ts"
+    ],
+    "exclude": [
+        "**/*.spec.ts",
+        "**/node_modules/**",
+        "**/test/**"
+    ]
+}
