@@ -4,7 +4,7 @@
   "description": "Script to run one-time-pad encryption",
   "main": "./dist/src/index.js",
   "bin": {
-    "encrypt": "./dist/src/index.js"
+    "otp-encrypt": "./dist/src/index.js"
   },
   "scripts": {
     "test": "jest --runInBand",
