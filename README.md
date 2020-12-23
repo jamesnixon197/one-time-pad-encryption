@@ -55,10 +55,10 @@ to produce new binary strings for each character.
 Finally, it converts the new encrypted binary strings back to a Unicode string and encodes it with `Base64` (or else the encrypted value will have a ton of weird characters & new lines)
 
 ### Example
-Plain Text: `Y` = `89` = `0000000001011001`
+Plain Text: `Y` = `89` = `0000000001011001`. 
 One-Time-Pad key: `u` = `117` = `0000000001110101`
 
-`XOR`'ing the two of them produces:
+`XOR`'ing the two of them produces:  
 `0000000000101101`
 
 which is the 16-bit binary for the character '`-`'
