@@ -1,6 +1,6 @@
 import {transformValue} from '../transform-value'
 
-import {buildRandomString} from '../../../test/helpers';
+import {buildRandomString} from '../../../../test/helpers';
 
 describe('Transform value', () => {
     let valueToEncrypt: string;

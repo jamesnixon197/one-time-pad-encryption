@@ -1,8 +1,13 @@
 import {encryptValue} from '../encrypt';
-import {isBase64} from '../util';
 import * as transformValueLibrary from '../transform-value';
 
-import {buildRandomString} from '../../../test/helpers';
+import {buildRandomString} from '../../../../test/helpers';
+
+const isBase64 = (value: string): boolean => {
+    return (
+        /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/
+    ).test(value);
+}
 
 describe('Encrypt value', () => {
     let transformValueSpy: jest.SpyInstance;
@@ -18,30 +23,7 @@ describe('Encrypt value', () => {
         keyToEncryptWith = buildRandomString(9);
     });
 
-    describe('Value already encrypted', () => {
-        let base64EncodedValue: string;
-
-        beforeEach(() => {
-            base64EncodedValue = Buffer.from(valueToEncrypt).toString('base64');
-        });
-
-        it('should throw an error', async () => {
-            expect(() =>
-                encryptValue(base64EncodedValue, keyToEncryptWith)
-            ).toThrowError('Value is already encrypted');
-        });
-
-        it('should not call transformValue', async () => {
-            try {
-                encryptValue(base64EncodedValue, keyToEncryptWith);
-            } catch (e) {
-                expect(transformValueSpy).not.toHaveBeenCalled();
-            }
-
-        });
-    });
-
-    describe('Value not already encrypted', () => {
+    describe('Value correctly encrypted', () => {
         it('should call transformValue with parameters', async () => {
             encryptValue(valueToEncrypt, keyToEncryptWith);
 

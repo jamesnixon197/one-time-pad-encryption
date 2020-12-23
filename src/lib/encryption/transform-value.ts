@@ -5,8 +5,8 @@ export const transformValue = (
     if (!value) throw new Error('Value is invalid');
     if (!oneTimePadKey) throw new Error('One time key is invalid');
 
-    const valueBinaries = getBinaryFromUnicode(value);
-    const keyBinaries = getBinaryFromUnicode(oneTimePadKey);
+    const valueBinaries = getBinariesFromUnicode(value);
+    const keyBinaries = getBinariesFromUnicode(oneTimePadKey);
 
     if (valueBinaries.length != keyBinaries.length)
         throw new Error('Key & value mismatch, two different lengths');
@@ -14,7 +14,7 @@ export const transformValue = (
     return buildTransformedValue(valueBinaries, keyBinaries);
 };
 
-const getBinaryFromUnicode = (unicodeString: string): Array<string> => {
+const getBinariesFromUnicode = (unicodeString: string): Array<string> => {
     const characterCodes: Array<number> = getCharCodeOfString(unicodeString);
 
     return characterCodes.map((value) => value.toString(2).padStart(16, '0'));
@@ -40,7 +40,7 @@ const getCharCodeOfString = (value: string): Array<number> => {
 const buildTransformedValue = (
     valueBinaries: Array<string>,
     keyBinaries: Array<string>
-) => {
+): string => {
     let transformedString = '';
     valueBinaries.forEach((value, index) => {
         let transformedBinaryBlock = '';

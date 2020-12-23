@@ -13,9 +13,6 @@
         "strictNullChecks": true,
         "experimentalDecorators": true
     },
-    "include": [
-        "**/*.ts"
-    ],
     "exclude": [
         "**/*.spec.ts",
         "**/node_modules/**",
