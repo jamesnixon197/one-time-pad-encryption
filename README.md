@@ -6,7 +6,7 @@ TypeScript example of how one-time-pad encryption works.
 
 I just made this to practice cryptography. As much as I have pride in my own work, I'm not sure how secure the random seed generator is, meaning it may be very predictable and easy to hack.
 
-Also, as a one time pad, if you're encrypting a peice of data that is very short the key will also be very short (and easy to break!).
+Also, as a one time pad, if you're encrypting a piece of data that is very short the key will also be very short (and easy to break!).
 
 ## Set up
 
