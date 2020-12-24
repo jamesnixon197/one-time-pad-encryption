@@ -2,7 +2,7 @@
 
 import commander, {program} from 'commander'
 import packageDetails from '../package.json'
-import {generateOneTimePadKey} from './lib/key'
+import {generateOneTimePadKey} from './lib/key';
 import {encryptValue} from './lib/encryption/encrypt';
 import {decryptValue} from './lib/encryption/decrypt';
 
@@ -24,8 +24,8 @@ const handleEncryptionOption = () => {
 
     console.log(
         'Your one-time-pad key is (keep hold of this to decrypt):\n\''
-            + oneTimePadKey
-            + '\''
+        + oneTimePadKey
+        + '\''
     );
 
     const encryptedValue = encryptValue(valueToEncrypt, oneTimePadKey);
